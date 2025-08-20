@@ -1,0 +1,32 @@
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Distribution files
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# Data and logs
+/data/
+/scraped_data/
+logs/
+
+# Sensitive files
+.env
