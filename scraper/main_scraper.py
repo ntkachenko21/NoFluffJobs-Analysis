@@ -11,7 +11,7 @@ ALL_CATEGORIES = (
     "architecture,backend,data,ux,devops,erp,embedded,frontend,fullstack,game-dev,mobile,project-manager,"
     "security,support,testing,other")
 CONCURRENCY_LIMIT = 10
-MAX_LOAD_MORE_CLICKS = 1
+MAX_LOAD_MORE_CLICKS = 46
 
 
 async def close_overlay(page):
@@ -27,15 +27,15 @@ async def scroll_and_load_more(page, max_clicks=MAX_LOAD_MORE_CLICKS):
     while clicks < max_clicks:
         await close_overlay(page)
         await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        await page.wait_for_timeout(1000)
+        await page.wait_for_timeout(1100)
 
         try:
             btn = page.locator('button:has-text("Pokaż kolejne oferty")')
             await btn.click()
             clicks += 1
             print(f"Click {clicks}")
-            await page.wait_for_timeout(1000)
-        except:
+            await page.wait_for_timeout(1100)
+        except Exception:
             break
 
     return clicks
